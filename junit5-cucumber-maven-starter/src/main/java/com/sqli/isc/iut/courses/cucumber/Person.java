@@ -7,7 +7,12 @@ import com.sqli.isc.iut.courses.cucumber.Emotion;
 public class Person {
     private String name;
     private Emotion currentEmotion;
-
+    private Bar bar;
+    public Person(String name, Bar bar) {
+        this.name = name;
+        this.currentEmotion = Emotion.CALM;
+        this.bar = bar;
+    }
     public Person(String name) {
         this.name = name;
         this.currentEmotion = Emotion.CALM;
@@ -20,6 +25,10 @@ public class Person {
     }
     public Emotion getCurrentEmotion() {
         return currentEmotion;
+    }
+    public void getADrink(){
+        System.out.println("I want a drink");
+        bar.getCocktailOfTheMonth(this);
     }
 };
 
